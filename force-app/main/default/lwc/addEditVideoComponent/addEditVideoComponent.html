@@ -1,0 +1,13 @@
+<template>
+    <div style="background-color: #fff;padding: 20px;">
+        <div style="font-size: 20px;font-weight: 600;color:#666666;margin-bottom: 8px;">How to Videos ?</div>
+        <div style="display: flex;gap: 10px 30px;">
+            <video width="200" height="120" style="border-radius: 10px;border: 1px solid #ddd;padding: 5px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" controls poster={imageUrl}>
+                <source src={video} type="video/mp4">
+                <source src={video} type="video/ogg">
+                    Your browser does not support the video tag.
+            </video>   
+        </div>
+    </div>
+    <c-add-edit-video-component></c-add-edit-video-component>
+</template>

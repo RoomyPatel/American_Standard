@@ -1,0 +1,37 @@
+<template>
+    <lightning-card style="padding: 40px;">
+        <div style="padding: 20px;">
+            <div style="display: flex;">
+                <div>
+                    <h5 style="color: #e60000;
+                    font-weight: 500;">Step 1</h5>
+                </div>
+                <div style="margin-left: auto;">
+                    <button style="width: 50px;
+                    position: relative;
+                    color: #3f3f3f;
+                    padding: 5px;
+                    margin: 0 3px;
+                    background-color: #fff;
+                    outline: none;
+                    border: 1px solid #3f3f3f;
+                    box-shadow: 1px 1px 1px #3f3f3f;" onclick={handleEdit}>Edit</button>
+                    <div if:true={openModal} style="position: absolute;">
+                        <c-open-modal fields={getImageList} onsave={handleSaveData}
+                            onclose={handleCloseModal}></c-open-modal>
+                    </div>
+                </div>
+            </div>
+            <p style="color: #999999;margin-bottom: 10px;">Turn off the water supply before you start fixing the leak,
+                turn off the water supply to the faucet.Look for the shutoff valve underneath the sink and turn it
+                clockwise to shut off the water supply.</p>
+            <div if:true={removeImage} style="display: flex;gap: 5px 10px;">
+                <template for:each={getImageList} for:item="image">
+                    <div key={image.id}>
+                        <image src={image.value} width="200" height="200" style="border-radius: 10px; "></image>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

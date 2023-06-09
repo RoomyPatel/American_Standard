@@ -1,0 +1,38 @@
+<template>
+    <div style="background-color: #fff;
+    padding: 20px;">
+        <div style="display:flex;">
+            <div style="font-size: 20px;font-weight: 600;color:#666666;margin-bottom: 8px;">How to Videos ?</div>
+            <div style="margin-left: auto;">
+                <button style="width: 50px;
+                    position: relative;
+                    color: #3f3f3f;
+                    padding: 5px;
+                    margin: 0 3px;
+                    background-color: #fff;
+                    outline: none;
+                    border: 1px solid #3f3f3f;
+                    box-shadow: 1px 1px 1px #3f3f3f;" onclick={handleEdit}>Edit</button>
+                <div if:true={openModal} style="position: absolute;">
+                    <c-open-modal fields={getVideoList} onsave={handleSaveData}
+                        onclose={handleCloseModal}></c-open-modal>
+                </div>
+            </div>
+        </div>
+
+
+        <div style="display: flex;gap: 10px 30px;">
+            <div if:true={removeVideo} style="display: flex;gap: 5px 10px;">
+                <template for:each={getVideoList} for:item="video">
+                    <div key={video.id}>
+                        <iframe width="200" height="120"
+                            style="border-radius: 10px;border: 1px solid #ddd;padding: 5px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"
+                            src={video.value} frameborder="0" gesture="media" allow="autoplay; encrypted-media"
+                            allowfullscreen></iframe>
+                    </div>
+                </template>
+            </div>
+           
+        </div>
+    </div>
+</template>

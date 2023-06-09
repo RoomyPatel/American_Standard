@@ -1,0 +1,19 @@
+<template>
+    <div class="slds-m-around_medium form">
+        <div class="slds-m-top_medium">
+            <lightning-input type="text" label="Title"></lightning-input>
+        </div>
+
+        <div class="slds-m-top_medium">
+            <lightning-textarea name="Description" label="Description" ></lightning-textarea>
+        </div>
+
+        <div class="slds-m-top_medium">
+            <lightning-input type="url" label="Enter a Image URL" name="Image" ></lightning-input>
+        </div>
+
+        <div class="slds-m-top_medium">
+            <lightning-button variant="brand" label="Add" class="slds-m-left_x-small" onclick={handleAdd}></lightning-button>
+        </div>
+   </div>
+</template>
